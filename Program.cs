@@ -49,7 +49,7 @@ class ThreadSafeObjectHolder {
 	}
 
 	public object GetFirstObject() {
-        return Interlocked.CompareExchange(ref item, item, null);
+        return item;
 	}
 
 }
@@ -57,13 +57,13 @@ class ThreadSafeObjectHolder {
 class Program {
 	static void Main(string[] args) {
         /*Tests */
-        ThreadSafeObjectHolder holder = new ThreadSafeObjectHolder();
-        if(holder.GetFirstObject() == null) {
-            Console.WriteLine("null");
-        }
-        holder.AddObject(5);
-        Console.WriteLine(holder.GetFirstObject());
-        holder.AddObject(2);
-        Console.WriteLine(holder.GetFirstObject());
+        // ThreadSafeObjectHolder holder = new ThreadSafeObjectHolder();
+        // if(holder.GetFirstObject() == null) {
+        //     Console.WriteLine("null");
+        // }
+        // holder.AddObject(5);
+        // Console.WriteLine(holder.GetFirstObject());
+        // holder.AddObject(2);
+        // Console.WriteLine(holder.GetFirstObject());
 	}
 }
