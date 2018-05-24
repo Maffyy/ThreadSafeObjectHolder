@@ -10,13 +10,7 @@ using System.Threading;
 // Optimize for scenario with 0 or 1 referenced objects (algorithm's hot path). Once a single datastructure instance holds more than 1 object it's considered "strange" and
 // does not have to be optimized anymore.
 //
-/*
-    chci nejak vyuzit nejak compareExchange
-    Budu si pamatovat prvni polozku seznamu
-    object first = null, object
-    List<object> rest -> jedna nebo vice polozek
 
- */
 class ThreadSafeObjectHolder {
 
     volatile object item;
@@ -51,19 +45,10 @@ class ThreadSafeObjectHolder {
 	public object GetFirstObject() {
         return item;
 	}
-
 }
 
 class Program {
 	static void Main(string[] args) {
-        /*Tests */
-        // ThreadSafeObjectHolder holder = new ThreadSafeObjectHolder();
-        // if(holder.GetFirstObject() == null) {
-        //     Console.WriteLine("null");
-        // }
-        // holder.AddObject(5);
-        // Console.WriteLine(holder.GetFirstObject());
-        // holder.AddObject(2);
-        // Console.WriteLine(holder.GetFirstObject());
+        
 	}
 }
